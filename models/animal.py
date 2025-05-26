@@ -4,6 +4,6 @@ from database import Base
 class Animal(Base):
     __tablename__ = 'animals'
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    species = Column(String)
-    owner_id = Column(Integer, ForeignKey('owners.id'))
+    name = Column(String, nullable=False)
+    species = Column(String, nullable=False)
+    owner_id = Column(Integer, ForeignKey('owners.id'), nullable=False)
